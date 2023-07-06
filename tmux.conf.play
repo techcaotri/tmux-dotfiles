@@ -1,0 +1,27 @@
+# cat <<__DATA__ >/dev/null
+
+# Your tmux configuration here
+set-option -g prefix C-t
+unbind-key C-b
+bind-key C-t send-prefix
+
+# Call foo
+# display-message "ABCD"
+run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s foo'
+bind + run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s foo'
+# Call bar
+run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s bar'
+
+# __DATA__
+#
+# function foo {
+#     # Do foo
+#     echo "foo"
+# }
+#
+# function bar {
+#     # Do bar
+#     tmux new \; run 'echo "bar"'
+# }
+#
+# $1
