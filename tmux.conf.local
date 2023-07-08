@@ -426,7 +426,8 @@ set -g @plugin 'sainnhe/tmux-fzf'
 set -g @continuum-restore 'on'
 
 # allow all pass-through for displaying images in kitty terminal
-set -g allow-passthrough all
+set-option -g allow-passthrough all
+# set -g allow-passthrough all
 set -g xterm-keys on
 
 # -- custom variables ----------------------------------------------------------
