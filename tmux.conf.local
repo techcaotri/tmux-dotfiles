@@ -374,11 +374,13 @@ set -g mode-keys vi
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # TriPham bind C-n to open new tmux window from nnn
-bind C-n run-shell "/home/tripham/Dev/Playground_Terminal/tmux_new_window.sh"
+bind C-n run-shell "/home/tripham/.dotfiles/apps/tmux_new_window.sh"
 
 # move status line to top
 #set -g status-position top
 
+# TriPham synchronize environment variables
+set-option -g update-environment -r
 
 # -- tpm -----------------------------------------------------------------------
 
