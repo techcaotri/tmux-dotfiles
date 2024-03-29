@@ -380,7 +380,7 @@ bind C-n run-shell "/home/tripham/.dotfiles/apps/tmux_new_window.sh"
 #set -g status-position top
 
 # TriPham synchronize environment variables
-set-option -g update-environment -r
+# set-option -g update-environment -r
 
 # -- tpm -----------------------------------------------------------------------
 
