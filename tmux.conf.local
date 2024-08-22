@@ -561,7 +561,7 @@ bind C-n run-shell "/home/tripham/.dotfiles/apps/tmux_new_window.sh"
 # TriPham bind C-left to move to left window
 bind C-Left swap-window -t -1
 # TriPham bind C-right to move to right window
-bind C-Left swap-window -t +1
+bind C-Right swap-window -t +1
 
 # move status line to top
 #set -g status-position top
