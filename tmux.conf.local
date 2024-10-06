@@ -612,6 +612,7 @@ set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tassaron/tmux-df'
 set -g @plugin 'trevarj/tmux-open-nvim'
 set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @continuum-restore 'on'
 
 # allow all pass-through for displaying images in kitty terminal
