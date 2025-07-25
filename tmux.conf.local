@@ -612,11 +612,15 @@ set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tassaron/tmux-df'
 set -g @plugin 'trevarj/tmux-open-nvim'
 set -g @plugin 'sainnhe/tmux-fzf'
-set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @continuum-restore 'on'
 
 # allow all pass-through for displaying images in kitty terminal
 set -g allow-passthrough on
+
+# Set fish-shell as the default shell for new panes and windows
+set -g default-shell /usr/bin/fish
+set -g default-command /usr/bin/fish
+
 # set -g allow-passthrough all
 set -g xterm-keys on
 
