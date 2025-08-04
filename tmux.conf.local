@@ -566,6 +566,9 @@ bind C-Right swap-window -t +1
 # move status line to top
 #set -g status-position top
 
+# set fintgers key to F
+set -g @fingers-key C-f
+
 # TriPham synchronize environment variables
 # set-option -g update-environment -r
 
@@ -612,6 +615,7 @@ set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tassaron/tmux-df'
 set -g @plugin 'trevarj/tmux-open-nvim'
 set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'Morantron/tmux-fingers'
 set -g @continuum-restore 'on'
 
 # allow all pass-through for displaying images in kitty terminal
