@@ -618,8 +618,13 @@ set -g @plugin 'sainnhe/tmux-fzf'
 set -g @plugin 'Morantron/tmux-fingers'
 set -g @continuum-restore 'on'
 
-# allow all pass-through for displaying images in kitty terminal
+# allow all pass-through for displaying images in kitty terminal.
+# `allow-passthrough` was added in tmux 3.3 — on Ubuntu 22.04's tmux 3.2a it does
+# not exist and tmux aborts config parsing with "invalid option: allow-passthrough".
+# Guard with tmux's native version conditional so the same file works on both boxes.
+%if #{>=:#{version},3.3}
 set -g allow-passthrough on
+%endif
 
 # Set fish-shell as the default shell for new panes and windows
 set -g default-shell /usr/bin/fish
