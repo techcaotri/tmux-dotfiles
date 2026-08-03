@@ -633,6 +633,18 @@ set -g default-command /usr/bin/fish
 # set -g allow-passthrough all
 set -g xterm-keys on
 
+# ---------------------------------------------------------------------------
+# Google search
+# ---------------------------------------------------------------------------
+
+bind-key g display-popup \
+  -E \
+  -T " Antigravity Query " \
+  -w 80% \
+  -h 25% \
+  -d "#{pane_current_path}" \
+  "$HOME/bin/tmux-agy-query"
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
