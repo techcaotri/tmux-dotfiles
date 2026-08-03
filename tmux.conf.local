@@ -634,16 +634,29 @@ set -g default-command /usr/bin/fish
 set -g xterm-keys on
 
 # ---------------------------------------------------------------------------
-# Google search
+# Search and AI query popup
 # ---------------------------------------------------------------------------
+# Prompts for one query, then opens a popup with two panes: web search results
+# on the left, the AI answer in lvim-new on the right. Replaces the old
+# tmux-agy-query binding; agy is now one provider among several.
+#   prefix + g   ask a question
+#   prefix + G   reopen a previous answer
 
 bind-key g display-popup \
   -E \
-  -T " Antigravity Query " \
+  -T " Search and AI " \
   -w 80% \
   -h 25% \
   -d "#{pane_current_path}" \
-  "$HOME/bin/tmux-agy-query"
+  "$HOME/bin/tmux-search-ai"
+
+bind-key G display-popup \
+  -E \
+  -T " Previous queries " \
+  -w 80% \
+  -h 60% \
+  -d "#{pane_current_path}" \
+  "$HOME/bin/tmux-search-ai --open"
 
 # -- custom variables ----------------------------------------------------------
 
