@@ -642,13 +642,19 @@ set -g xterm-keys on
 #   prefix + g   ask a question
 #   prefix + G   reopen a previous answer
 
+# A popup cannot open another popup: setting a new overlay clears the current
+# one and the second popup's command never runs. So each binding chains two
+# commands. display-popup -E blocks the command queue until it closes, which is
+# what makes the queued run-shell fire afterwards, with no overlay in the way.
+
 bind-key g display-popup \
   -E \
   -T " Search and AI " \
   -w 80% \
   -h 25% \
   -d "#{pane_current_path}" \
-  "$HOME/bin/tmux-search-ai"
+  "$HOME/bin/tmux-search-ai --defer" \; \
+  run-shell -b "$HOME/bin/tmux-search-ai --show-pending"
 
 bind-key G display-popup \
   -E \
@@ -656,7 +662,8 @@ bind-key G display-popup \
   -w 80% \
   -h 60% \
   -d "#{pane_current_path}" \
-  "$HOME/bin/tmux-search-ai --open"
+  "$HOME/bin/tmux-search-ai --open --defer" \; \
+  run-shell -b "$HOME/bin/tmux-search-ai --show-pending"
 
 # -- custom variables ----------------------------------------------------------
 
