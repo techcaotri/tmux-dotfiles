@@ -7,10 +7,10 @@ bind-key C-t send-prefix
 
 # Call foo
 # display-message "ABCD"
-run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s foo'
-bind + run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s foo'
+run 'cut -c3- "/Users/tripham/.config/tmux/tmux.conf" | sh -s foo'
+bind + run 'cut -c3- "/Users/tripham/.config/tmux/tmux.conf" | sh -s foo'
 # Call bar
-run 'cut -c3- "/home/tripham/.config/tmux/tmux.conf" | sh -s bar'
+run 'cut -c3- "/Users/tripham/.config/tmux/tmux.conf" | sh -s bar'
 
 # __DATA__
 #

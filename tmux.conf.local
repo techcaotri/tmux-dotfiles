@@ -556,7 +556,7 @@ set -g mode-keys vi
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # TriPham bind C-n to open new tmux window from nnn
-bind C-n run-shell "/home/tripham/.dotfiles/apps/tmux_new_window.sh"
+bind C-n run-shell "/Users/tripham/.dotfiles/apps/tmux_new_window.sh"
 
 # TriPham bind C-left to move to left window
 bind C-Left swap-window -t -1
@@ -627,8 +627,8 @@ set -g allow-passthrough on
 %endif
 
 # Set fish-shell as the default shell for new panes and windows
-set -g default-shell /usr/bin/fish
-set -g default-command /usr/bin/fish
+set -g default-shell "/opt/homebrew/bin/fish"
+set -g default-command "/opt/homebrew/bin/fish"
 
 # set -g allow-passthrough all
 set -g xterm-keys on
